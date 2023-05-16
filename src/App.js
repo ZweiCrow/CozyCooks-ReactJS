@@ -10,7 +10,7 @@ function App() {
         <Route path="/" Component={Page}/>
         <Route path="/Recettes" Component={Page}/>
         <Route path="/Carnet" Component={Page}/>
-        <Route path="/Contacts" Component={Page}/>
+        <Route path="/AboutUs" Component={Page}/>
         <Route path="/Connexion" Component={Page}/>
       </Route>
     </Routes>

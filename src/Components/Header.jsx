@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../Utils/Sass/header.scss"
 
 
@@ -11,6 +11,8 @@ const Header = () => {
   const NavAboutUs = useRef();
   const Pointer = useRef();
   const BoutonMobile = useRef();
+
+  const { pathname } = useLocation();
 
   
   useEffect(()=>{ // Bouge le curseur sous la bonne rubrique
@@ -63,7 +65,9 @@ const Header = () => {
     
     document.addEventListener("mousedown",handler) // Lance la fonction handler lors d'un  clic
 
-  })
+    window.scrollTo(0, 0);
+
+  },[pathname])
 
 
   return (

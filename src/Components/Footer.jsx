@@ -32,10 +32,10 @@ const Footer = () => {
           </li>
           <li>
             <p>Plan du site</p>
-            <Link>Accueil</Link>
-            <Link>Recettes</Link>
-            <Link>Carnet</Link>
-            <Link>About Us</Link>
+            <Link to={"/"}>Accueil</Link>
+            <Link to={"/Recettes"}>Recettes</Link>
+            <Link to={"/Carnet"}>Carnet</Link>
+            <Link to={"/AboutUs"}>About Us</Link>
           </li>
         </ul>
       </div>

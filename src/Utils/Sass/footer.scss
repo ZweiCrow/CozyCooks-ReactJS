@@ -1,6 +1,6 @@
 @import "./constantes.scss";
 
-footer  { width: 100%; height: 305px; display: flex !important; flex-direction: column; justify-content: flex-end; position: relative;
+footer  { width: 100%; height: 305px; display: flex !important; flex-direction: column; justify-content: flex-end; position: relative; margin-top: 50px !important;
           #backToTop  { height: 100px; width: 100px; border-radius: 50%; border: 10px solid $Blanc; background: $Bleu; position: absolute; bottom: 195px; left: calc(50% - 55px);
                         img { width: 100%; height: 95%; transition: .5s;
                               &:hover { filter: drop-shadow(0 0 4px $Jaune);}

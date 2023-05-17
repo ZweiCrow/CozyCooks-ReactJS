@@ -1,0 +1,17 @@
+
+$Blanc: #F2F5F8;
+$Bleu: #292F36;
+$Jaune: #FFBF46;
+$BlancAlt: #AEB0B2;
+$BleuAlt: #748599;
+$JauneAlt: #B28631;
+
+@font-face { font-family: Quicksand; src: url(../Fonts/Quicksand/Quicksand-VariableFont_wght.ttf);}
+
+a { text-decoration: none;}
+
+@mixin centerRow { display: flex; flex-direction: row; justify-content: center; align-items: center;}
+@mixin centerCol { display: flex; flex-direction: column; justify-content: center; align-items: center;}
+
+
+// @media screen and (max-width: 450px) {}

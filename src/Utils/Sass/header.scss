@@ -1,0 +1,111 @@
+@import "./constantes.scss";
+
+.activeNav { filter: drop-shadow(0 0 4px $Jaune);}
+.activeButton { background: $Bleu !important;}
+
+.hidden {opacity: 0 !important; transform: translateY(5px); transition: var(--speed) ease; }
+.active {opacity: 1 !important; transform: translateY(20px); transition: var(--speed) ease; }
+.hiddenBlock { display: none !important;}
+.activeBlock { display: block !important;}
+
+
+header  { width: 100%; height: fit-content; min-height: 200px; margin-bottom: 30px !important; position: relative;
+          #Header { width: 100%; height: 200px; background: #292F3699; position: absolute; @include centerRow; justify-content: space-between; box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+                    #logo { width: 30%; height: 100%; @include centerRow;
+                            img { width: 270px; height: 170px; transition: .5s;
+                                  &:hover { filter: drop-shadow(0 0 4px $Blanc); cursor: pointer;}
+                                }
+                          }
+                    #HeaderMobile { width: 40%; height: fit-content; min-height: 200px; position: absolute; display: none !important; right: 20px; top: 10px;
+                                    #BoutonMobile { width: 100px; height: 100px; background: $BleuAlt; position: relative; left: calc(50% - 100px/2); top: 50px; border-radius: 50%;
+                                                    img { width: 100%; height: 100%;}
+                                                  }
+                                    #MenuMobile { width: 230px; height: fit-content; min-height: 70px; background: $Bleu; position: relative; margin: 75px 0px 25px -55px; left: calc(50% - 90%/2); border-radius: 15px; padding: 10px 0; display: none; transition: .5s; box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+                                                  ul  { width: 100%; height: 100%; @include centerCol;
+                                                        li  { height: fit-content; padding: 10px 0;
+                                                              a { color: $Blanc; font-family: Quicksand; font-size: 25px;}
+                                                              div { @include centerRow; margin-top: 20px;
+                                                                    img { width: 15%; margin-right: 10px;}
+                                                                  }
+                                                            }
+                                                      }
+                                                  
+                                                  &::after { content: " "; position: absolute; right: 50px; top: -14px; border-top: none; border-right: 15px solid transparent; border-left: 15px solid transparent; border-bottom: 15px solid $Bleu;}
+                                                }
+                                  }
+                    #HeaderRight  { width: 60%; height: 100%; @include centerCol;
+                                    .Nav { width: 100%; height: 50%; }
+                                    #NavUp    { @include centerRow; justify-content: flex-end;
+                                                div { width: fit-content; height: 20px; background: $Blanc; padding: 15px 30px; border-radius: 15px; margin-right: 30px; @include centerRow; box-shadow: 0px 4px 4px 0px #00000040; transition: .5s;
+                                                      img { height: 150%; margin-right: 10px; transition: .5s;}
+                                                      p   { font-family: Quicksand; font-weight: bold; font-size: 30px; color: $Jaune; transition: .5s;}
+                                                      &:hover { filter: drop-shadow(0 0 4px $Blanc);}
+                                                    }
+                                              }
+                                    #NavDown  { position: relative;
+                                                #Pointer { height: 5px; width: 50px; border-radius: 5px; background: $Jaune; position: absolute; transition: .5s; top: 70px;}
+                                                ul  { width: 100%; height: 100%; @include centerRow; justify-content: space-around;
+                                                      li  { width: fit-content;
+                                                            a { font-family: Quicksand; color: $Blanc; font-weight: bold; font-size: 25px; transition: .5s;
+                                                                &:hover { color: $Blanc; filter: drop-shadow(0 0 4px $Blanc);}
+                                                              }
+                                                          }
+                                                    }
+                                              }
+                                  }
+                  }
+          #HeaderCarousel { width: 100%; height: 500px;
+                            img { width: 100%; height: 100%;}
+                          }
+        }
+
+
+// RESPONSIVE
+
+@media screen and (max-width: 1000px) {
+  header  {
+            #Header {
+                      #logo { width: 300px;}
+                    }
+          }
+}
+
+@media screen and (max-width: 700px) {
+  header  {
+            #Header {
+                      #HeaderRight  { display: none;}
+                      #HeaderMobile { display: block !important;}
+                    }
+            #HeaderCarousel { width: 100%; height: 400px;}
+          }
+}
+
+@media screen and (max-width: 550px) {
+  header  {
+            #Header {
+                      #MenuMobile { margin-left: -80px !important;}
+                    }
+            #HeaderCarousel { width: 100%; height: 300px;}
+          }
+}
+
+@media screen and (max-width: 500px) {
+  header  {
+            #Header {
+                      #logo { justify-content: flex-start;
+                              img { width: 150px; height: 100px; margin-left: 20px;}
+                            }
+                      #MenuMobile { margin-left: -85px !important;}
+                    }
+          }
+}
+
+@media screen and (max-width: 400px) {
+  header  {
+            #Header {
+                      #BoutonMobile { width: 75px !important; height: 75px !important;}
+                      #MenuMobile { margin-left: -110px !important;}
+                    }
+            #HeaderCarousel { width: 100%; height: 200px;}
+          }
+}

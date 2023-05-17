@@ -10,9 +10,13 @@ footer  { width: 100%; height: 305px; display: flex !important; flex-direction: 
           #footerDown { height: 255px; background: $Bleu; border-top-left-radius: 15px; border-top-right-radius: 15px; @include centerRow;
                         ul  { width: 90%; height: 90%; @include centerRow; justify-content: space-around;
                               li  { width: 25%; height: 80%; @include centerCol;
-                                    &:nth-child(1) { justify-content: flex-start; align-items: flex-start;}
-                                    &:nth-child(2) { height: 60%; @include centerRow; justify-content: space-around;}
-                                    &:nth-child(3) { justify-content: flex-start; align-items: flex-end;}
+                                    &:nth-child(1)  { justify-content: flex-start; align-items: flex-start;}
+                                    &:nth-child(2)  { height: 60%; @include centerRow; justify-content: space-around;
+                                                      a { width: 60%; margin: 0; @include centerRow;
+                                                          img { width: 60%;}
+                                                        }
+                                                    }
+                                    &:nth-child(3)  { justify-content: flex-start; align-items: flex-end;}
                                     p { font-family: KanitBold; font-size: 24px; color: $Blanc; margin-bottom: 25px;}
                                     a { font-family: Quicksand; font-size: 20px; color: $Blanc; margin-bottom: 10px;  transition: .5s;
                                         &:hover { filter: drop-shadow(0 0 4px $Blanc);}
@@ -21,3 +25,36 @@ footer  { width: 100%; height: 305px; display: flex !important; flex-direction: 
                             }
                       }
         }
+
+// RESPONSIVE
+
+@media screen and (max-width: 800px) {
+  footer  {
+            #backToTop  { width: 80px; height: 80px; bottom: 205px; left: calc(50% - 50px);}
+            #footerDown {
+                          ul  {
+                                li  {
+                                      &:nth-child(2)  { justify-content: space-between;
+                                                        a { width: 70%;
+                                                            img { width: 70%;}
+                                                        }
+                                                      }
+                                    }
+                              }
+                        }
+          }
+}
+
+@media screen and (max-width: 600px) {
+  footer  {
+            #backToTop  { width: 60px; height: 60px; bottom: 215px; left: calc(50% - 40px);}
+            #footerDown {
+                          ul  {
+                                li  { width: 30%;
+                                      p { font-size: 17px !important;}
+                                      a { font-size: 15px !important;}
+                                    }
+                              }
+                        }
+          }
+}

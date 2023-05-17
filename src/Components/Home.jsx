@@ -61,7 +61,11 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <img id="HomePicture" src="./Images/Home3.jpg" alt="Illustration Site" />
+      <div id="HomePicture">
+        <img src="./Images/Home1.jpg" alt="" />
+        <img src="./Images/Home2.jpg" alt="" />
+        <img src="./Images/Home3.jpg" alt="" />
+      </div>
     </section>
   );
 };

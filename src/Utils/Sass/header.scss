@@ -9,7 +9,7 @@
 .activeBlock { display: block !important;}
 
 
-header  { width: 100%; height: fit-content; min-height: 200px; margin-bottom: 30px !important; position: relative;
+header  { width: 100%; height: fit-content; min-height: 200px; margin-bottom: 30px !important; position: relative; overflow-x: hidden;
           #Header { width: 100%; height: 200px; background: #292F3699; position: absolute; @include centerRow; justify-content: space-between; box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
                     #logo { width: 30%; height: 100%; @include centerRow;
                             img { width: 270px; height: 170px; transition: .5s;
@@ -54,7 +54,7 @@ header  { width: 100%; height: fit-content; min-height: 200px; margin-bottom: 30
                                               }
                                   }
                   }
-          #HeaderCarousel { width: 100%; height: 500px;
+          #HeaderCarousel { width: 100%; height: 500px; display: flex; 
                             img { width: 100%; height: 100%;}
                           }
         }

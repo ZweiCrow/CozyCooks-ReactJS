@@ -12,6 +12,8 @@ const Header = () => {
   const Pointer = useRef();
   const BoutonMobile = useRef();
 
+  const on = true
+
   const { pathname } = useLocation();
 
   
@@ -35,6 +37,8 @@ const Header = () => {
     if(window.location.pathname.includes("/Connexion")){
       Pointer.current.style.opacity = "0" 
     }
+
+    
     
     if(mobile){
       const Menu = document.querySelector("#MenuMobile");
@@ -67,7 +71,7 @@ const Header = () => {
 
     window.scrollTo(0, 0);
 
-  },[pathname])
+  })
 
 
   return (
@@ -116,7 +120,7 @@ const Header = () => {
         </div>
       </div>
       <div id='HeaderCarousel' style={(window.location.pathname !== "/") ? {display: "none"} : null}>
-        <img src="./Images/Carousel1.png" alt="Carousel1" />
+        <img src="./Images/Carousel1.png" alt="Carousel1"/>
       </div>
     </header>
   );

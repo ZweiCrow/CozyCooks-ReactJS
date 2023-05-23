@@ -3,6 +3,7 @@ import HeaderFooter from "./Components/Templates/HeaderFooter";
 import Page from "./Components/Page";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
+import Recettes from "./Components/Recettes";
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" Component={HeaderFooter}>
         <Route path="/" Component={Home}/>
-        <Route path="/Recettes" Component={Page}/>
+        <Route path="/Recettes" Component={Recettes}/>
         <Route path="/Carnet" Component={Page}/>
         <Route path="/AboutUs" Component={AboutUs}/>
         <Route path="/Connexion" Component={Page}/>

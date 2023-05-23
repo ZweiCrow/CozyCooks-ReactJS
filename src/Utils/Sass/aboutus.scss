@@ -50,9 +50,9 @@
 @media screen and (max-width: 1000px) {
   #About  { 
             #ALeft  {
-                      form  { flex-direction: column; justify-content: space-around;
+                      form  { flex-direction: column; height: 650px;
                               .champContact { width: 100%;}
-                              button  { margin: 0;}
+                              button  { margin-top: 30px;}
                             }
                     }
             #ARight  {width: 100%;}

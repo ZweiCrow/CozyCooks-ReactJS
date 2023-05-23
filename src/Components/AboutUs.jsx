@@ -83,7 +83,7 @@ const AboutUs = () => {
             </div>
             <div className="champContact" id="champMessage">
               <label htmlFor="Message">Message</label>
-              <textarea  name="Message" id="Message" placeholder="Entrer votre message ici ..." onChange={(e)=>setMessage(e.target.value)}/>
+              <textarea  name="Message" id="Message" placeholder="Entrer votre message ici ..." maxLength={5000} onChange={(e)=>setMessage(e.target.value)}/>
               <p className="hide" ref={errMessage}>* Champ obligatoire</p>
             </div>
             <div className="champContact">

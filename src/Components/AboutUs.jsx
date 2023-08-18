@@ -12,6 +12,17 @@ const AboutUs = () => {
   const errMessage = useRef()
   const errMail = useRef()
 
+  const dt = new Date();
+  const padL = (nr, len = 2, chr = `0`) => `${nr}`.padStart(2, chr);
+
+  console.log(`${
+      padL(dt.getMonth()+1)}${
+      padL(dt.getDate())}${
+      dt.getFullYear()}${
+      padL(dt.getHours())}${
+      padL(dt.getMinutes())}`
+  );
+
   const submit = (e) => {
     e.preventDefault();
     verif()

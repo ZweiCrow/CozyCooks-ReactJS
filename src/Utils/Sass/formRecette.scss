@@ -1,0 +1,61 @@
+@import "./constantes.scss";
+
+#FormRecette  { width: 90%; height: fit-content; background: $JauneT; margin: 50px auto; display: flex; flex-wrap: wrap; border-radius: 15px; 
+                .box  { width: 45%; height: 100px; margin: 2.5%; @include centerCol; align-items: flex-start;
+                        label { font-family: KanitMedium; font-size: 18px; margin: 0 0 10px 15px; color: $Bleu;}
+                        input { width: 80%; height: 40%; border: none; border-radius: 15px; padding: 5px; font-family: Quicksand; font-size: 18px; margin-left: 5px;text-indent: 6px; color: $Bleu; transition: .5s;
+                                &:hover { color: $Jaune;}
+                                &:focus { color: $Orange; outline: none; font-weight: bold;}
+                              }
+                        select  { width: 85%; height: 50px;  border: none; border-radius: 15px; padding: 5px; font-family: Quicksand; font-size: 18px; text-indent: 6px; color: $Bleu; transition: .5s;
+                          &:hover { color: $Jaune;}
+                          &:focus { color: $Orange; outline: none; font-weight: bold;}
+                        }
+                      }
+                #ingredients  { width: 90%; height: fit-content; background: $BlancT; margin: 20px auto; border-radius: 15px; padding: 15px;
+                                h2    { font-family: KanitMedium; font-size: 18px; margin: 0 0 10px 15px; color: $Bleu;}
+                                .entry{ width: 95%; height: 70px; background: $Blanc; margin: 20px auto; border-radius: 15px; @include centerRow; justify-content: flex-start;
+                                        input   { font-family: Quicksand; font-size: 18px; color: $Bleu; width: 20%; height: 50%; border: 1px solid transparent; border-radius: 15px; margin: 0 20px; text-indent: 15px; transition: .5s; 
+                                                  &:hover { border: 1px solid $Jaune; color: $Orange;}
+                                                  &:focus { border: 1px solid $Jaune; outline: none; color: $Jaune;}
+                                                }
+                                        select  { font-family: Quicksand; font-size: 18px; color: $Bleu; width: 20%; height: 50%; border: 1px solid transparent; border-radius: 15px; margin: 0 20px; text-indent: 15px; transition: .5s; 
+                                                  &:hover { border: 1px solid $Orange; color: $Orange;}
+                                                  &:focus { border: 1px solid $Jaune; outline: none; color: $Jaune;}
+                                                }
+                                        #quantité  { width: 10%;}
+                                        #Unité  { width: 10%;}
+                                        #ingredient  { width: 30%;}
+                                      }
+                                .plus { width: 65px; height: 65px; background: $Blanc; transition: .5s; margin-left: 30px; border-radius: 15px; @include centerRow;
+                                        img { width: 80%; height: 80%;}
+                                        &:hover { background: $BlancAlt; cursor: pointer;}
+                                      }
+                                .minus  { width: 45px; height: 45px; background: $Orange; transition: .5s; margin-right: 20px; border-radius: 15px; @include centerRow;
+                                          img { width: 50%; height: 50%;}
+                                          &:hover { background: $BlancAlt; cursor: pointer;}
+                                        }
+                              }
+                #etapes       { width: 90%; height: fit-content; background: $BlancT; margin: 20px auto; border-radius: 15px; padding: 15px;
+                                h2    { font-family: KanitMedium; font-size: 18px; margin: 0 0 10px 15px; color: $Bleu;}
+                                .step { width: 95%; height: fit-content; background: $Blanc; margin: 20px auto; border-radius: 15px; @include centerRow; justify-content: flex-start; padding: 10px 0;
+                                        textarea  { font-family: Quicksand; font-size: 18px; color: $Bleu; width: 90%; height: 50px; border: 1px solid transparent; border-radius: 15px; margin: 0 20px; padding: 15px; transition: .5s; max-height: 150px;
+                                                    &:hover { border: 1px solid $Orange; color: $Orange;}
+                                                    &:focus { border: 1px solid $Jaune; outline: none; color: $Jaune;}
+                                                  }
+                                      }
+                                .plus { width: 65px; height: 65px; background: $Blanc; transition: .5s; margin-left: 30px; border-radius: 15px; @include centerRow;
+                                        img { width: 80%; height: 80%;}
+                                        &:hover { background: $BlancAlt; cursor: pointer;}
+                                      }
+                                .minus  { width: 45px; height: 45px; background: $Orange; transition: .5s; margin-right: 20px; border-radius: 15px; @include centerRow;
+                                          img { width: 50%; height: 50%;}
+                                          &:hover { background: $BlancAlt; cursor: pointer;}
+                                        }
+                              }
+                button  { width: 15%; height: 40px; font-family: Quicksand; font-weight: bold; font-size: 20px; border: none; border-radius: 15px; margin: 20px auto; color: $Blanc; background: $Jaune; transition: .5s;
+                          img     { width: 100%; height: 100%;}
+                          &:hover { background: $Bleu; color: $Orange; cursor: pointer;}
+                        }
+                
+              }

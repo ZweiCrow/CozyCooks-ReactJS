@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 import "../Utils/Sass/header.scss"
 
 
 const Header = () => {
+  const navigate = useNavigate();
   const [mobile, setMobile] = useState(false)
   const NavHome = useRef();
   const NavRecette = useRef();
@@ -15,6 +17,8 @@ const Header = () => {
   const on = true
 
   const { pathname } = useLocation();
+  const user = Cookies.get('TokenForDNSUser')
+  
 
   
   useEffect(()=>{ // Bouge le curseur sous la bonne rubrique
@@ -22,11 +26,11 @@ const Header = () => {
       Pointer.current.style.opacity = "1" 
       Pointer.current.style.transform = `translateX(${NavHome.current.offsetLeft+(NavHome.current.offsetWidth/4)}px)`
     }
-    if(window.location.pathname.includes("/Recettes")){
+    if(window.location.pathname.includes("/Recettes") || window.location.pathname.includes("/PageRecette")){
       Pointer.current.style.opacity = "1" 
       Pointer.current.style.transform = `translateX(${NavRecette.current.offsetLeft+(NavRecette.current.offsetWidth/4)}px)`
     }
-    if(window.location.pathname.includes("/Carnet")){
+    if(window.location.pathname.includes("/Carnet") || window.location.pathname.includes("/Formulaire")){
       Pointer.current.style.opacity = "1" 
       Pointer.current.style.transform = `translateX(${NavCarnet.current.offsetLeft+(NavCarnet.current.offsetWidth/4)}px)`
     }
@@ -37,8 +41,6 @@ const Header = () => {
     if(window.location.pathname.includes("/Connexion")){
       Pointer.current.style.opacity = "0" 
     }
-
-    
     
     if(mobile){
       const Menu = document.querySelector("#MenuMobile");
@@ -73,19 +75,33 @@ const Header = () => {
 
   })
 
+  const Deconnexion = () => {
+    if (user) {
+      if(window.confirm("Etes vous sur de vouloir vous déconnecter ?")){
+        Cookies.remove('TokenForDNSUser')
+        window.location.reload()
+      }
+    }
+    if (!user) {
+      setTimeout(()=>{
+        navigate('/User/Connexion');
+      }, 100)
+    }
+  }
+
 
   return (
     <header>
       <div id='Header'>
         <div id='logo'>
-          <Link to={"/"}><img src="./Icons/LogoWhite.svg" alt="" /></Link>
+          <Link to={"/"}><img src="/Icons/LogoWhite.svg" alt="Logo Site" /></Link>
         </div>
         <div id='HeaderRight'>
           <div id='NavUp' className='Nav'>
-            <Link to={"/Connexion"}>
-              <div className={(window.location.pathname.includes("Connexion"))||(window.location.pathname.includes("Inscription")) ? "activeButton" : ""}>
-                <img src="./Icons/User.svg" alt="" />
-                <p>Connexion</p>
+            <Link onClick={Deconnexion}>
+              <div className={(window.location.pathname.includes("User")) ? "activeButton" : ""}>
+                <img src="/Icons/User.svg" alt="Icone Connexion Utilisateur" />
+                <p>{(user)? "Déconnexion" : "Connexion"}</p>
               </div>
             </Link>
           </div>
@@ -101,7 +117,7 @@ const Header = () => {
         </div>
         <div id='HeaderMobile'>
           <div id='BoutonMobile' ref={BoutonMobile} onClick={()=>{setMobile(!mobile)}} >
-            <img src="./Icons/User.svg" alt="Bouton Mobile" />
+            <img src="/Icons/User.svg" alt="Bouton Mobile" />
           </div>
           <div id='MenuMobile'>
             <ul>
@@ -109,10 +125,10 @@ const Header = () => {
               <li><Link to={"/Recettes"} className={(window.location.pathname.includes("/Recettes")) ? "activeNav" : ""}>Recettes</Link></li>
               <li><Link to={"/Carnet"} className={(window.location.pathname.includes("/Carnet")) ? "activeNav" : ""}>Carnet</Link></li>
               <li><Link to={"/About Us"} className={(window.location.pathname.includes("/AboutUs")) ? "activeNav" : ""}>AboutUs</Link></li>
-              <li><Link to={"/Connexion"}>
+              <li><Link onClick={Deconnexion}>
                 <div className={(window.location.pathname.includes("Connexion"))||(window.location.pathname.includes("Inscription")) ? "activeNav" : ""}>
-                  <img src="./Icons/User.svg" alt="" />
-                  <p>Connexion</p>
+                  <img src="/Icons/User.svg" alt="Icone Connexion Utilisateur" />
+                  <p>{(user)? "Déconnexion" : "Connexion"}</p>
                 </div>
               </Link></li>
             </ul>
@@ -120,7 +136,7 @@ const Header = () => {
         </div>
       </div>
       <div id='HeaderCarousel' style={(window.location.pathname !== "/") ? {display: "none"} : null}>
-        <img src="./Images/Carousel1.png" alt="Carousel1"/>
+        <img src="/Images/Carousel1.png" alt="Carousel1"/>
       </div>
     </header>
   );

@@ -23,7 +23,7 @@ const Home = () => {
         <div id="SpliteDown">
           <div id="ToRecipes">
             <img
-              src="./Icons/RecettesIcon.svg"
+              src="/Icons/RecettesIcon.svg"
               alt="Icone Recettes"
               className="Icone"
             />
@@ -37,12 +37,12 @@ const Home = () => {
             </p>
             <Link to={"/Recettes"}>
               <p>Aller à la page recettes</p>
-              <img src="./Icons/Fleche.svg" alt="Fleche" />
+              <img src="/Icons/Fleche.svg" alt="Fleche" />
             </Link>
           </div>
           <div id="ToCarnet">
             <img
-              src="./Icons/CarnetIcon.svg"
+              src="/Icons/CarnetIcon.svg"
               alt="Icone Recettes"
               className="Icone"
             />
@@ -56,15 +56,15 @@ const Home = () => {
             </p>
             <Link to={"/Carnet"}>
               <p>Aller à la page carnet</p>
-              <img src="./Icons/Fleche.svg" alt="Fleche" />
+              <img src="/Icons/Fleche.svg" alt="Fleche" />
             </Link>
           </div>
         </div>
       </div>
       <div id="HomePicture">
-        <img src="./Images/Home1.jpg" alt="" />
-        <img src="./Images/Home2.jpg" alt="" />
-        <img src="./Images/Home3.jpg" alt="" />
+        <img src="/Images/Home1.jpg" alt="Carousel 1" />
+        <img src="/Images/Home2.jpg" alt="Carousel 2" />
+        <img src="/Images/Home3.jpg" alt="Carousel 3" />
       </div>
     </section>
   );

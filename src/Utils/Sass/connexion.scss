@@ -1,0 +1,13 @@
+@import "./constantes.scss";
+
+.choosen  { color: $Jaune !important;}
+
+#Connexion  { width: 100%; height: fit-content; display: flex; flex-direction: column; align-items: center; padding: 100px 0;
+              #Choix { width: 40%; height: 85px; border-radius: 20px; display: flex; justify-content: space-between; overflow: hidden; position: relative;
+                        a       { width: 49.7%; height: 100%; background: $Bleu; border: none; color: $Blanc; font-family: Quicksand; font-size: 24px; font-weight: bold; transition: .5s; @include centerRow;
+                                  &:hover { background: $BleuAlt; color: $Blanc; cursor: pointer;}
+                                }
+                        #select { width: 49.7%; height: 5%; background: $Jaune; position: absolute; bottom: 0; transition: .5s; left: 0;}
+                      }
+              #outletContainer  { width: 90%; height: 700px; margin-top: 30px; @include centerRow;}
+            }

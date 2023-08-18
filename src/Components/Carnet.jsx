@@ -3,15 +3,19 @@ import axios from "axios"
 import "../Utils/Sass/recette-carnet.scss"
 import { URL } from '../Utils/Urls';
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
-const Recettes = () => {
+const Carnet = () => {
   const [search, setSearch] = useState("")
   const [Categorie, setCategorie] = useState("")
   const [Style, setStyle] = useState("")
   const [Niveau, setNiveau] = useState("")
   const [Actual, setActual] = useState(0)
   const [RecipesList, setRecipesList] = useState([]);
+  const [User, setUser] = useState([]);
   const pages = [];
+  
+  const user = Cookies.get('TokenForDNSUser')
 
   let counter =0;
   let recipeStart = Actual * 8;
@@ -19,15 +23,27 @@ const Recettes = () => {
   useEffect(()=>{
     const fetchRecipes = async ()=>{
       try {
-        const {data} = await axios.get(URL.fetchRecipes)
-        setRecipesList(data)
+        if(typeof(user) === "string"){
+          const {data} = await axios.get(URL.fetchRecipesOfUser + user)
+          setRecipesList(data)
+        }
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    const fetchUser = async ()=>{
+      try {
+        if(typeof(user) === "string"){
+          const {data} = await axios.get(URL.fetchUsersById+user)
+          setUser(data)
+        }
       } catch (error) {
         console.error(error.message);
       }
     };
     fetchRecipes();
+    fetchUser();
   },[])
-  
 
 
   if(RecipesList.length > 8){
@@ -38,8 +54,31 @@ const Recettes = () => {
     pages.push(1)
   }
 
+  if(typeof(user) !== "string"){
+    return(
+      <div id='LoginWarning'>
+        <div id='warning'>
+          <p>Pour acceder à cette page, vous devez vous connecter. Souhaitez vous vous rendre sur la page de connexion ?</p>
+          <div id='warningChoice'>
+            <Link to={"/"}>Retour</Link>
+            <Link to={"/User/Connexion"}>Connexion</Link>
+          </div>
+        </div>
+        <div id='back'></div>
+        <div id='backImg'></div>
+      </div>
+    )
+  }
+
   return (
+  <>
     <section id='Recettes'>
+      <div id='Hello'>
+        <p id='hi'>Bonjour, {User.nom}
+        {/* <br/><br/> Vous avez enregistré {User.favorites.length} recettes parmis vos favoris. */}
+        </p>
+        <Link to={"/Formulaire"}>Voulez vous enregistrer une nouvelle recette ?</Link>
+      </div>  
       <h1>Recettes</h1>
       {/* Barre de recherche */}
       <div id='searchBar'>
@@ -111,7 +150,8 @@ const Recettes = () => {
         <button className='arrows' id='end' onClick={()=> setActual(pages.length-1)}><img src="/Icons/End.svg" alt="Fleche"/></button>
       </div>
     </section>
+  </>
   );
 };
 
-export default Recettes;
+export default Carnet;

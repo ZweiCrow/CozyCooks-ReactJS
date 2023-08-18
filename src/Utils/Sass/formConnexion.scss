@@ -1,0 +1,17 @@
+@import "./constantes.scss";
+
+#formConnexion  { width: 50%; height: 95%; background: #F2F2F2; box-shadow: inset 0 4px 4px $BlancAlt; border-radius: 15px; overflow: hidden;
+                  #FormConnexion  { width: 100%; height: 100%; @include centerCol; 
+                                    .entry  { width: 60%; height: 40px; font-family: Quicksand; font-size: 30px; margin: 35px 0 10px; border: none; border-bottom: 2px solid $BleuAlt; background: none; color: $BleuAlt; transition: .5s;
+                                              &::placeholder  { color: $BleuAlt; transition: .5s;}
+                                              &:hover { border-bottom: 4px solid $Bleu; color: $Bleu;
+                                                        &::placeholder {color: $Bleu;}
+                                                      }
+                                              &:focus { outline: none; border-bottom: 4px solid $Jaune; color: $Jaune;}
+                                            }
+                                    .warning{ font-family: Quicksand; font-size: 16px; font-weight: bold; color: $Orange; margin-bottom: 35px; text-align: center; opacity: 0; transition: .5s;}
+                                    button  { border: none; border-radius: 20px; background: $Jaune; padding: 10px 20px; margin-top: 50px; font-family: Quicksand; font-weight: bold; color: $Blanc; font-size: 25px; transition: .5s;
+                                              &:hover { background: $Orange; cursor: pointer;}
+                                            }
+                                  }
+                }

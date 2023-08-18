@@ -9,7 +9,20 @@
 .hideArrow { display: none; background: transparent; border: none;}
 .showArrow { display: block; background: transparent; border: none;}
 
-#Recettes { width: 90%; height: fit-content; margin: auto; margin-top: 100px; @include centerCol;
+#Recettes { width: 100%; height: fit-content; margin: auto; padding: 100px 0; @include centerCol; background: url("../../../public/Icons/Group\ 61.svg"); position: relative;
+            #bouttons   { width: 30%; height: 55px; border-radius: 20px; display: flex; justify-content: space-between; overflow: hidden; position: relative; margin-bottom: 40px;
+                          button  { width: 49.7%; height: 100%; background: $Bleu; border: none; color: $Blanc; font-family: Quicksand; font-size: 24px; font-weight: bold; transition: .5s; @include centerRow;
+                                    &:hover { background: $BleuAlt; color: $Blanc; cursor: pointer;}
+                                  }
+                        }
+            #favorited  { width: 100%; height: fit-content; @include centerCol; display: flex; opacity: 1; transition: .5s;}
+            #created    { width: 100%; height: fit-content; @include centerCol; display: none; opacity: 0; transition: .5s;}
+            #Hello      { width: 80%; height: 175px;
+                          #hi   { font-family: KanitMedium; font-size: 30px; color: $Bleu; margin-bottom: 20px;}
+                          a     { font-family: KanitMedium; font-size: 30px; color: $Orange;
+                                  &:hover { color: $Jaune;}
+                                }
+                        }
             #searchBar  { width: 60%; height: 35px; position: relative; @include centerRow; margin-bottom: 75px;
                           input { width: 100%; height: 100%; border: 3px solid $Bleu; border-radius: 7px; padding: 10px; color: $Bleu; font-family: Quicksand; font-size: 18px; font-weight: bold; text-indent: 10px; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));
                                   &:hover { font-size: 22px; color: $Jaune; border: 3px solid $Jaune;}
@@ -21,7 +34,6 @@
                         }
             #filters    { width: 60%; min-height: 50px; height: fit-content; @include centerRow; justify-content: space-around; margin-bottom: 50px;
                           select  { width: 150px; padding: 15px; font-family: Quicksand; font-size: 22px; font-weight: bold; border: none; border-radius: 10px; background: $Bleu; color: $Blanc; appearance: none; background-image: url("../../../public/Icons/SelectArrow.svg"); background-repeat: no-repeat; background-position: right 0.7rem top 50%; background-size: 0.65rem auto; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));
-                                    &:hover { }
                                     &:focus { outline: none;}
                                     &:nth-child(3){width: 190px;}
                                   }
@@ -36,9 +48,10 @@
                                               }
                                     }
                               }
+                             
                         }
 
-            #Choice { width: 50%; height: 50px; background: $Blanc; @include centerRow; margin: auto;
+            #Choice { width: 50%; height: 50px; @include centerRow; margin: auto;
               .hideArrow  { display: none; background: transparent; border: none;
                             img { height: 25px;}
                             &:hover { cursor: pointer;
@@ -65,3 +78,19 @@
                         }
             }
           }
+
+#LoginWarning { width: 100%; height: 100vh; background: $Blanc; position: absolute; top: 0; z-index: 100000; @include centerRow;
+                #warning  { width: 30%; height: 200px; background: $Blanc; position: absolute; border-radius: 15px; border: 3px solid $BleuAlt; @include centerCol; z-index: 15;
+                            p { width: 80%; font-family: KanitMedium; font-size: 18px; color: $Bleu;}
+                            #warningChoice  { width: 80%; height: 20%; @include centerRow; justify-content: space-around; margin-top: 50px;
+                                              a { font-family: KanitMedium; font-size: 18px; color: $Blanc; background: $Bleu; border-radius: 15px; padding: 10px 20px; transition: .5s;
+                                                  &:hover { background: $Jaune; color: $Bleu;}
+                                                }
+                                            }
+                          }
+                #backImg  { width: 100%; height: 100%; position: absolute; z-index: 5; background: url("../../../public/Icons/Group\ 60.svg");}
+                #back     { width: 100%; height: 100%; position: absolute; z-index: 10; background: $JauneT;}
+              }
+
+// RESPONSIVE
+@media screen and (max-width: 1250px) {}

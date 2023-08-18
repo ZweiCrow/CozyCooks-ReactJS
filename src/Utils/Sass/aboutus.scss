@@ -15,19 +15,19 @@
                             .champContact { width: 40%; height: fit-content; display: flex; flex-direction: column;
                                             p     { color: red; font-size: 12px;}
                                             label { font-family: KanitMedium; font-size: 20px; color: $Bleu; text-indent: 15px; margin-bottom: 5px;}
-                                            input { font-family: Quicksand; font-size: 17px; color: $Blanc; background: $BleuAlt; border-radius: 50px; border: none; padding: 10px 20px;
+                                            input { font-family: Quicksand; font-size: 17px; color: $Blanc; background: $BleuAlt; border-radius: 50px; border: none; padding: 10px 20px; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));
                                                     &::placeholder  { color: $Blanc;}
-                                                    &:hover { background: $BlancAlt; color: $Bleu;
+                                                    &:hover { background: $Blanc; color: $Bleu;
                                                               &::placeholder  { color: $BleuAlt;}
                                                             }
-                                                    &:focus { outline: none; background: $BlancAlt; color: $Bleu; font-weight: bold;}
+                                                    &:focus { outline: none; background: $Blanc; color: $Bleu; font-weight: bold;}
                                                   }
-                                            textarea  { min-height: 170px; height: fit-content; width: 95%; max-width: 95%; max-height: 250px; padding: 15px; border-radius: 15px 15px 0px 15px; border: none; background: $BleuAlt; color: $Blanc; font-family: Quicksand; font-size: 17px; margin: auto;
+                                            textarea  { min-height: 170px; height: fit-content; width: 95%; max-width: 95%; max-height: 250px; padding: 15px; border-radius: 15px 15px 0px 15px; border: none; background: $BleuAlt; color: $Blanc; font-family: Quicksand; font-size: 17px; margin: auto; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));
                                                         &::placeholder  { color: $Blanc;}
-                                                        &:hover { background: $BlancAlt; color: $Bleu;
+                                                        &:hover { background: $Blanc; color: $Bleu;
                                                                   &::placeholder  { color: $BleuAlt;}
                                                                 }
-                                                        &:focus { outline: none; background: $BlancAlt; color: $Bleu; font-weight: bold;}
+                                                        &:focus { outline: none; background: $Blanc; color: $Bleu; font-weight: bold;}
                                                       }
                                           }
                             #champMessage { width: 100%;}
@@ -47,6 +47,7 @@
             #ARight  {width: 100%;}
           }
 }
+
 @media screen and (max-width: 1000px) {
   #About  { 
             #ALeft  {

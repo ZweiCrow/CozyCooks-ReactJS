@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <footer>
-      <div id='backToTop' ref={backToTop}><img src="./Icons/BackToTop.svg" alt="Retour Haut de Page" /></div>
+      <div id='backToTop' ref={backToTop}><img src="/Icons/BackToTop.svg" alt="Retour Haut de Page" /></div>
       <div id='footerDown'>
         <ul>
           <li>
@@ -27,8 +27,8 @@ const Footer = () => {
             <Link>RGPD</Link>
           </li>
           <li>
-            <Link><img src="./Icons/Instagram.svg" alt="Lien Logo Instagram" /></Link>
-            <Link><img src="./Icons/Facebook.svg" alt="Lien Logo Facebook" /></Link>
+            <Link><img src="/Icons/Instagram.svg" alt="Lien Logo Instagram" /></Link>
+            <Link><img src="/Icons/Facebook.svg" alt="Lien Logo Facebook" /></Link>
           </li>
           <li>
             <p>Plan du site</p>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Page = () => {
   return (
-    <div style={{height: "1000px"}}>
+    <div style={{height: "100px"}}>
       Page standby
     </div>
   );

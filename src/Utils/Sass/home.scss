@@ -33,17 +33,34 @@
                       }
       }
 
-      @keyframes fade-in-out {
-        0%, 100% {
-          opacity: 0;
+@keyframes fade-in-out {
+  0%, 100% {
+    opacity: 0;
+  }
+  8.33% {
+    opacity: 1;
+  }
+  33.33% {
+    opacity: 1;
+  }
+  41.67% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #Home {
+          #HomeSplit1   { width: 100%;}
+          #HomePicture  { display: none;}
         }
-        8.33% {
-          opacity: 1;
+}
+
+@media screen and (max-width: 650px) {
+  #Home { height: fit-content;
+          #HomeSplit1   { 
+                          #SpliteDown { @include centerCol; 
+                                        div { margin: 50px 0 50px; width: 70%; }
+                                      }
+                        }
         }
-        33.33% {
-          opacity: 1;
-        }
-        41.67% {
-          opacity: 0;
-        }
-      }
+}

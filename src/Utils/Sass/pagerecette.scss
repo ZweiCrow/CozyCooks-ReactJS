@@ -1,0 +1,118 @@
+@import "./constantes.scss";
+
+#PageRecette  { width: 100%; height: fit-content; margin: auto; @include centerCol; background: url("../../../public/Icons/Group\ 61.svg");
+                #presentation { width: 100%; height: 300px; @include centerRow; justify-content: space-around; margin: 50px 0 50px;
+                                #display  { width: 50%; height: 100%; border-radius: 25px; position: relative; overflow: hidden; filter: drop-shadow(4px 4px 4px rgba(0, 37, 64, 0.25));
+                                            #front  { width: 100%; height: 100%; position: absolute; z-index: 10; background: linear-gradient(0deg, rgba(255,255,255,0) 50%, rgba(41,47,54,1) 100%);
+                                                      p { color: $Blanc; font-family: Quicksand; font-weight: bold;
+                                                          &:nth-child(1){ font-size: 35px; margin: 15px 0 0 15px;}
+                                                          &:nth-child(3){ font-size: 20px; margin: 5px 0 0 15px;}
+                                                        }
+                                                      #divider { height: 4px; margin-left: 15px;}
+                                                    }
+                                            #back { width: 100%; position: absolute; top: -125%; z-index: 5; transition: .5s;}
+                                          }
+                                #spec   { width: 35%; height: 100%; display: flex; flex-direction: column; justify-content: center;
+                                          .fav { position: relative; border: none; background: transparent; padding: 0; cursor: pointer; outline-offset: 4px; transition: filter 250ms; user-select: none; touch-action: manipulation; margin: 25px 0 45px; width: 70%;
+                                                    &:hover { filter: brightness(110%); }
+                                                    &:hover .front { transform: translateY(-6px); transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5); }
+                                                    &:active .front { transform: translateY(-2px); transition: transform 34ms; }
+                                                    &:hover .shadow { transform: translateY(4px); transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5); }
+                                                    &:active .shadow { transform: translateY(1px); transition: transform 34ms; }
+                                                    &:focus:not(:focus-visible) { outline: none; }
+                                                    .shadow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; background: hsl(0deg 0% 0% / 0.25); will-change: transform; transform: translateY(2px); transition: transform 600ms cubic-bezier(.3, .7, .4, 1); }
+                                                    .edge   { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; background: linear-gradient( to left, $JauneAlt 0%, $Jaune 8%, $Jaune 92%, $JauneAlt 100% ); }
+                                                    .front  { font-family: Quicksand; font-size: 24px; font-weight: bold; display: flex; justify-content: center; align-items: center; position: relative; padding: 12px 27px; border-radius: 12px; color: white; background: $Jaune; border: 1px solid $JauneAlt; will-change: transform; transform: translateY(-4px); transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+                                                              p { margin: 0 0 0 10px; font-family: Quicksand; font-size: 20px; font-weight: bold;}
+                                                            }
+                                                }
+                                          .favyes { position: relative; border: none; background: transparent; padding: 0; cursor: pointer; outline-offset: 4px; transition: filter 250ms; user-select: none; touch-action: manipulation; margin: 25px 0 45px; width: 70%;
+                                                    .front { font-family: Quicksand; font-size: 24px; font-weight: bold; display: flex; justify-content: center; align-items: center; position: relative; padding: 12px 27px; border-radius: 12px; color: white; background: $Orange; border: 1px solid $OrangeAlt; will-change: transform; transform: translateY(-4px); transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+                                                              p { margin: 0 0 0 10px; font-family: Quicksand; font-size: 20px; font-weight: bold;}
+                                                            }
+                                                }
+                                          p { margin-bottom: 30px; font-family: Quicksand; font-size: 20px; font-weight: bold;}
+                                        }
+                              }
+                #ingredients  { width: 95%; height: fit-content; margin: 50px 0 50px; padding: 15px 0 15px;
+                                h2      { font-family: Quicksand; font-weight: bold; font-size: 24px; margin-bottom: 25px; color: $Bleu; margin-left: 35px;}
+                                .liste  { width: 95%; height: fit-content; background: #F2F2F2; box-shadow: inset 0 4px 4px $BlancAlt; margin: auto; border-radius: 15px; @include centerRow; flex-wrap: wrap;
+                                          .ingredients  { width: fit-content; height: fit-content; background: $BleuAlt; margin: 20px 10px; border-radius: 5px; padding: 15px; box-shadow: 0 4px 4px $BlancAlt; display: flex;
+                                                          p { font-family: Quicksand; font-weight: bold; font-size: 16px; color: $Blanc;}
+                                                        }
+                                        }
+                              }
+                #etapes       { width: 95%; height: fit-content; margin: 50px 0 50px; padding: 15px 0 15px;
+                                h2      { font-family: Quicksand; font-weight: bold; font-size: 24px; margin-bottom: 25px; color: $Bleu; margin-left: 35px;}
+                                .liste  { width: 95%; height: fit-content; background: #F2F2F2; box-shadow: inset 0 4px 4px $BlancAlt; margin: auto; border-radius: 15px; @include centerCol;
+                                          .etape  { width: 90%; height: fit-content; background: $BleuAlt; margin: 25px 0 25px; border-radius: 5px; padding: 15px; box-shadow: 0 4px 4px $BlancAlt;
+                                                    .index        { font-family: Quicksand; font-weight: bold; font-size: 24px; margin-bottom: 20px; color: $Blanc;}
+                                                    .instruction  { font-family: Quicksand; font-weight: bold; font-size: 16px; color: $Bleu; }
+                                                  }
+                                        }
+                              }
+              }
+
+.block  { display: flex !important;}
+.Hide  { display: none !important;}
+
+#loginWarning { width: 100%; height: 100vh; background: $Blanc; position: absolute; top: 0; z-index: 100000; @include centerRow; opacity: 0; display: none; transition: .5s;
+  #warning  { width: 30%; height: 200px; background: $Blanc; position: absolute; border-radius: 15px; border: 3px solid $BleuAlt; @include centerCol; z-index: 15;
+              p { width: 80%; font-family: KanitMedium; font-size: 18px; color: $Bleu;}
+              #warningChoice  { width: 80%; height: 20%; @include centerRow; justify-content: space-around; margin-top: 50px;
+                                a { font-family: KanitMedium; font-size: 18px; color: $Blanc; background: $Bleu; border-radius: 15px; padding: 10px 20px; transition: .5s;
+                                    &:hover { background: $Jaune; color: $Bleu;}
+                                  }
+                                button { font-family: KanitMedium; font-size: 18px; color: $Blanc; background: $Bleu; border-radius: 15px; padding: 6px 20px; border: none; transition: .5s;
+                                    &:hover { background: $Jaune; color: $Bleu; cursor: pointer;}
+                                  }
+                              }
+            }
+  #backImg  { width: 100%; height: 100%; position: absolute; z-index: 5; background: url("../../../public/Icons/Group\ 60.svg");}
+  #back     { width: 100%; height: 100%; position: absolute; z-index: 10; background: $JauneT;}
+}
+
+@media screen and (max-width: 1000px) {
+  #PageRecette  { 
+                  #presentation { 
+                                  #display  { 
+                                              #back { width: 125%;}
+                                            }
+                                }
+                }
+}
+@media screen and (max-width: 800px) {
+  #PageRecette  { 
+                  #presentation { 
+                                  #display  { 
+                                              #back { width: 150%;}
+                                            }
+                                }
+                }
+}
+@media screen and (max-width: 700px) {
+  #PageRecette  { 
+                  #presentation { flex-direction: column; height: 550px; margin: 10px 0 0px;
+                                  #display  { width: 80%; margin-bottom: 50px;}
+                                  #spec     { width: 80%; @include centerCol;}
+                                }
+                }
+}
+// @media screen and (max-width: 650px) {
+//   #PageRecette  { 
+//                   #presentation { 
+//                                   #display  { 
+//                                               #back { width: 200%;}
+//                                             }
+//                                 }
+//                 }
+// }
+// @media screen and (max-width: 500px) {
+//   #PageRecette  { 
+//                   #presentation { 
+//                                   #display  { 
+//                                               #back { width: 250%;}
+//                                             }
+//                                 }
+//                 }
+// }

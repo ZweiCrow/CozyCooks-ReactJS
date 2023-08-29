@@ -43,7 +43,7 @@ const PageRecette = () => {
   }
 
   const Suppr = ()=> {
-    axios.delete(URL.deleteRecipe+Recipe._id)
+    axios.delete(URL.deleteRecipe+Recipe.display+"/"+Recipe._id)
     setTimeout(()=>{
       navigate('/Carnet');
     }, 250)

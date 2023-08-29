@@ -1,24 +1,27 @@
+const root = "http://localhost:8080"
+
 export const URL = {
+
   // RECUPERATION
-  fetchRecipes: "http://localhost:8080/recettes",
-  fetchRecipeById: "http://localhost:8080/recettes/", // + id
-  fetchUsers: "http://localhost:8080/users",
-  fetchUsersById: "http://localhost:8080/users/", // + id
-  fetchRecipesOfUser: "http://localhost:8080/users/recipes/", // + id
+  fetchRecipes: `${root}/recettes`,
+  fetchRecipeById: `${root}/recettes/`, // + id
+  fetchUsers: `${root}/users`,
+  fetchUsersById: `${root}/users/`, // + id
+  fetchRecipesOfUser: `${root}/users/recipes/`, // + id
   
   // ENREGISTREMENT
-  addRecipe: "http://localhost:8080/recettes/add",
-  addImage: "http://localhost:8080/recettes/upload",
-  addUser: "http://localhost:8080/users/add",
+  addRecipe: `${root}/recettes/add`,
+  addImage: `${root}/recettes/upload`,
+  addUser: `${root}/users/add`,
   
-  verifyUser: "http://localhost:8080/users/verify",
+  verifyUser: `${root}/users/verify`,
 
 
   // PATCH
-  addRecipesToUser: "http://localhost:8080/users/addFav/", // + id de l'utilisateur
-  removeRecipesToUser: "http://localhost:8080/users/removeFav/", // + id de l'utilisateur
+  addRecipesToUser: `${root}/users/addFav/`, // + id de l'utilisateur
+  removeRecipesToUser: `${root}/users/removeFav/`, // + id de l'utilisateur
   
   // SUPPRESSION
-  deleteRecipe: "http://localhost:8080/recettes/delete/", // + id de la recette
+  deleteRecipe: `${root}/recettes/delete/`, // + img & id de la recette
 
 }

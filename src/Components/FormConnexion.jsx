@@ -32,7 +32,7 @@ const FormConnexion = () => {
       email: mail,
       password: pass
     }).then(response => {
-      const userToken = response.data
+      const userToken = response.data.message
       const warnVerif = document.querySelector("#warnVerif")
 
       if(userToken === "No user found"){

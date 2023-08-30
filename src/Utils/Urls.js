@@ -22,6 +22,6 @@ export const URL = {
   removeRecipesToUser: `${root}/users/removeFav/`, // + id de l'utilisateur
   
   // SUPPRESSION
-  deleteRecipe: `${root}/recettes/delete/`, // + img & id de la recette
+  deleteRecipe: `${root}/recettes/delete`, // + img & id de la recette
 
 }

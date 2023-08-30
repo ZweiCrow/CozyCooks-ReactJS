@@ -24,7 +24,7 @@ const PageRecette = () => {
   }
 
   const Warning = (mode)=> {
-    const warning = document.querySelector("#LoginWarning")
+    const warning = document.querySelector("#loginWarning")
 
     if(mode === "show"){
       document.body.style.overflow = "hidden"
@@ -43,7 +43,7 @@ const PageRecette = () => {
   }
 
   const Suppr = ()=> {
-    axios.delete(URL.deleteRecipe+Recipe.display+"/"+Recipe._id)
+    axios.delete(URL.deleteRecipe+Recipe.display.substring(7)+"/"+Recipe._id)
     setTimeout(()=>{
       navigate('/Carnet');
     }, 250)
@@ -138,16 +138,16 @@ const PageRecette = () => {
 
   return (<>
     <div id='loginWarning'>
-        <div id='warning'>
-          <p>Pour acceder à cette page, vous devez vous connecter. Souhaitez vous vous rendre sur la page de connexion ?</p>
-          <div id='warningChoice'>
-            <button onClick={()=>{Warning("hide")}}>Retour</button>
-            <Link to={"/User/Connexion"}>Connexion</Link>
-          </div>
+      <div id='warning'>
+        <p>Pour acceder à cette page, vous devez vous connecter. Souhaitez vous vous rendre sur la page de connexion ?</p>
+        <div id='warningChoice'>
+          <button onClick={()=>{Warning("hide")}}>Retour</button>
+          <Link to={"/User/Connexion"}>Connexion</Link>
         </div>
-        <div id='back'></div>
-        <div id='backImg'></div>
       </div>
+      <div id='back'></div>
+      <div id='backImg'></div>
+    </div>
     <section id="PageRecette">
       <h1 style={{display: "none"}}>{Recipe.nom}</h1>
       {/* PRESENTATION */}

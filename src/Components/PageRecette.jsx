@@ -160,7 +160,7 @@ const PageRecette = () => {
           </div>
           <img
             id="back"
-            src={`http://localhost:8080/${Recipe.display}`}
+            src={`https://christopher.startwin.fr/${Recipe.display}`}
             alt=""
           />
         </div>

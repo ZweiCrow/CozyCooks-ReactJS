@@ -86,7 +86,7 @@ const Recettes = () => {
                   <p>{item.niveau}</p>
                   <p>{item.nom}</p>
                 </Link>
-                <img src={`http://localhost:8080/${item.display}`} alt={item.nom} />
+                <img src={`https://christopher.startwin.fr/${item.display}`} alt={item.nom} />
               </li>
             )}else{
               return(<></>)

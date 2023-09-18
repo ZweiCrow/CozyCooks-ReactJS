@@ -93,6 +93,13 @@
               }
 
 // RESPONSIVE
+@media screen and (min-width: 1450px) {
+  #Display  {
+              ul  {
+                    li  {margin: 0 5%;}
+                  }
+            }
+}
 @media screen and (max-width: 1250px) {
   #Display  {
 

@@ -58,8 +58,12 @@
 @media screen and (max-width: 650px) {
   #Home { height: fit-content;
           #HomeSplit1   { 
+                          #SpliteUp   { width: 90%; margin: 50px auto}
                           #SpliteDown { @include centerCol; 
-                                        div { margin: 50px 0 50px; width: 70%; }
+                                        div { margin: 50px auto; width: 90%; 
+                                              p   { width: 95%;}
+                                              a   { margin-top: -5%;}
+                                            }
                                       }
                         }
         }

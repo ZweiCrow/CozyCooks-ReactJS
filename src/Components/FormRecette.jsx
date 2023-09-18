@@ -29,9 +29,10 @@ const FormRecette = () => {
       
       const dt = new Date();
       const padL = (nr, len = 2, chr = `0`) => `${nr}`.padStart(2, chr);
-      const date = `${padL(dt.getMonth()+1)}${padL(dt.getDate())}${dt.getFullYear()}${padL(dt.getHours())}${padL(dt.getMinutes())}`
+      const date = `${padL(dt.getMonth()+1)}${padL(dt.getDate())}${dt.getFullYear()}${padL(dt.getHours()-2)}2${padL(dt.getMinutes())}`
 
       setDisplay('/images/'+date+file.name)
+      console.log(date);
     }
 
   const HandleImage = ()=> {
@@ -60,22 +61,22 @@ const FormRecette = () => {
       ingredients: Ingredients,
       etapes: Etapes,
     }
-    console.log(recette);
+    // console.log(recette);
 
-    axios.post(URL.addRecipe,{
-      nom: Nom,
-      auteur: userId,
-      niveau: Niveau,
-      style: Style,
-      categorie: Categorie,
-      temps: Number(Temps),
-      display: Display,
-      ingredients: Ingredients,
-      etapes: Etapes,
-    })
-    setTimeout(()=>{
-      navigate('/Carnet');
-    }, 1000)
+    // axios.post(URL.addRecipe,{
+    //   nom: Nom,
+    //   auteur: userId,
+    //   niveau: Niveau,
+    //   style: Style,
+    //   categorie: Categorie,
+    //   temps: Number(Temps),
+    //   display: Display,
+    //   ingredients: Ingredients,
+    //   etapes: Etapes,
+    // })
+    // setTimeout(()=>{
+    //   navigate('/Carnet');
+    // }, 1000)
   }
 
   return (

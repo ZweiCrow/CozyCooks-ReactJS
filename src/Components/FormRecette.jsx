@@ -29,7 +29,7 @@ const FormRecette = () => {
       
       const dt = new Date();
       const padL = (nr, len = 2, chr = `0`) => `${nr}`.padStart(2, chr);
-      const date = `${padL(dt.getMonth()+1)}${padL(dt.getDate())}${dt.getFullYear()}${padL(dt.getHours()-2)}2${padL(dt.getMinutes())}`
+      const date = `${padL(dt.getMonth()+1)}${padL(dt.getDate())}${dt.getFullYear()}${padL(dt.getHours()-2)}${padL(dt.getMinutes())}`
 
       setDisplay('/images/'+date+file.name)
       console.log(date);

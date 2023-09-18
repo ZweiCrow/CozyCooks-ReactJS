@@ -63,20 +63,20 @@ const FormRecette = () => {
     }
     // console.log(recette);
 
-    // axios.post(URL.addRecipe,{
-    //   nom: Nom,
-    //   auteur: userId,
-    //   niveau: Niveau,
-    //   style: Style,
-    //   categorie: Categorie,
-    //   temps: Number(Temps),
-    //   display: Display,
-    //   ingredients: Ingredients,
-    //   etapes: Etapes,
-    // })
-    // setTimeout(()=>{
-    //   navigate('/Carnet');
-    // }, 1000)
+    axios.post(URL.addRecipe,{
+      nom: Nom,
+      auteur: userId,
+      niveau: Niveau,
+      style: Style,
+      categorie: Categorie,
+      temps: Number(Temps),
+      display: Display,
+      ingredients: Ingredients,
+      etapes: Etapes,
+    })
+    setTimeout(()=>{
+      navigate('/Carnet');
+    }, 1000)
   }
 
   return (

@@ -102,7 +102,10 @@
 }
 
 @media screen and (max-width: 1050px) {
-  #searchBar{ width: 80% !important;}
+  #LoginWarning { 
+                  #warning  { width: 325px !important; height: 205px !important;}
+                }
+  #searchBar  { width: 80% !important;}
   #Display  {
               ul  { flex-direction: column !important;
                     li  { max-width: 45% !important; width: 45% !important; height: 115px !important; margin: 20px 0;}

@@ -33,7 +33,7 @@
                                 }
                         }
             #filters    { width: 60%; min-height: 50px; height: fit-content; @include centerRow; justify-content: space-around; margin-bottom: 50px;
-                          select  { width: 150px; padding: 15px; font-family: Quicksand; font-size: 22px; font-weight: bold; border: none; border-radius: 10px; background: $Bleu; color: $Blanc; appearance: none; background-image: url("../../../public/Icons/SelectArrow.svg"); background-repeat: no-repeat; background-position: right 0.7rem top 50%; background-size: 0.65rem auto; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));
+                          select  { width: 150px; padding: 15px; margin: 10px; font-family: Quicksand; font-size: 22px; font-weight: bold; border: none; border-radius: 10px; background: $Bleu; color: $Blanc; appearance: none; background-image: url("../../../public/Icons/SelectArrow.svg"); background-repeat: no-repeat; background-position: right 0.7rem top 50%; background-size: 0.65rem auto; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));
                                     &:focus { outline: none;}
                                     &:nth-child(3){width: 190px;}
                                   }
@@ -96,12 +96,29 @@
 @media screen and (min-width: 1450px) {
   #Display  {
               ul  {
-                    li  {margin: 0 5%;}
+                    li  {margin: 0 1.5%;}
                   }
             }
 }
-@media screen and (max-width: 1250px) {
-  #Display  {
 
+@media screen and (max-width: 1050px) {
+  #searchBar{ width: 80% !important;}
+  #Display  {
+              ul  { flex-direction: column !important;
+                    li  { max-width: 45% !important; width: 45% !important; height: 115px !important; margin: 20px 0;}
+                  }
+            }
+}
+
+@media screen and (max-width: 650px) {
+  #filters    { flex-direction: column !important;
+                select  { }
+              }
+  #Display  { height: fit-content !important;
+              ul  { height: fit-content !important; flex-wrap: nowrap !important;
+                    li  { max-width: 90% !important; width: 90% !important;
+                          img {height: 250% !important; margin-top: -15%;}
+                        }
+                  }
             }
 }

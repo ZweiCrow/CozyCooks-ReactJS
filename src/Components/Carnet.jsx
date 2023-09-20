@@ -73,6 +73,7 @@ const Carnet = () => {
   return (
   <>
     <section id='Recettes'>
+    <h1 style={{ display: "none" }}>Carnet</h1>
       <div id='Hello'>
         <p id='hi'>Bonjour, {User.nom}
         {/* <br/><br/> Vous avez enregistré {User.favorites.length} recettes parmis vos favoris. */}

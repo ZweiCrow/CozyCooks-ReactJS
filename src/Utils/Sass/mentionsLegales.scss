@@ -1,0 +1,7 @@
+@import "./constantes.scss";
+
+#container  { width: 90%; height: fit-content;  margin: 90px auto; @include centerCol; align-items: flex-start;
+              h1  { font-family: KanitBold; color: $Bleu; font-size: 40px; margin: 0 auto 40px;}
+              h2  { font-family: KanitMedium; color: $Jaune; font-size: 30px; margin: 50px 0 10px;}
+              p   { font-family: Quicksand; color: $BleuAlt; font-size: 18px; }
+            }

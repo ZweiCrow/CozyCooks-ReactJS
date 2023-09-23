@@ -10,6 +10,8 @@ import FormConnexion from "./Components/FormConnexion";
 import FormInscription from "./Components/FormInscription";
 import Carnet from "./Components/Carnet";
 import FormRecette from "./Components/FormRecette";
+import MentionsLegales from "./Components/MentionsLegales";
+import FormRecetteModif from "./Components/FormRecetteModif";
 
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
         <Route path="/PageRecette" Component={PageRecette}/>
         <Route path="/Carnet" Component={Carnet}/>
         <Route path="/Formulaire" Component={FormRecette}/>
+        <Route path="/FormulaireM" Component={FormRecetteModif}/>
         <Route path="/AboutUs" Component={AboutUs}/>
+        <Route path="/MentionsLegales" Component={MentionsLegales}/>
         <Route path="/User" Component={Connexion}>
           <Route path="Connexion" Component={FormConnexion}/>
           <Route path="Inscription" Component={FormInscription}/>

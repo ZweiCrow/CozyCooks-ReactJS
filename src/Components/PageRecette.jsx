@@ -49,6 +49,12 @@ const PageRecette = () => {
     }, 250)
   }
 
+  const Modif = () => {
+    setTimeout(()=>{
+      navigate('/FormulaireM', {state:{id: Recipe._id}});
+    }, 250)
+  }
+
   const addToFavorite = () => {
     const bouton = document.querySelector("#fav")
     const text = document.querySelector("#favText")
@@ -165,14 +171,6 @@ const PageRecette = () => {
           />
         </div>
         <div id="spec">
-          {/* <button id="fav" className="fav" onClick={Verif}>
-            <span className="shadow"></span>
-            <span className="edge"></span>
-            <span className="front">
-              <img src="/Icons/Heart.svg" alt="Ajouter Favoris" />
-              <p id="favText">Ajouter aux Favoris</p>
-            </span>
-          </button> */}
           {(Recipe.auteur === "admin")
             ? <button id="fav" className="fav" onClick={Verif}>
                 <span className="shadow"></span>
@@ -180,6 +178,16 @@ const PageRecette = () => {
                 <span className="front">
                   <img src="/Icons/Heart.svg" alt="Ajouter Favoris" />
                   <p id="favText">Ajouter aux Favoris</p>
+                </span>
+              </button> 
+            : ""
+          }
+          {(Recipe.auteur !== "admin")
+            ? <button id="fav" className="fav" onClick={Modif} style={{width: "65%"}}>
+                <span className="shadow"></span>
+                <span className="edge"></span>
+                <span className="front">
+                  <p id="favText">Modifier cette recette</p>
                 </span>
               </button> 
             : ""

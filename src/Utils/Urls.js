@@ -17,10 +17,13 @@ export const URL = {
   
   verifyUser: `${root}/users/verify`,
 
+  sendMessage: `${root}/messages/send`,
+
 
   // PATCH
   addRecipesToUser: `${root}/users/addFav/`, // + id de l'utilisateur
   removeRecipesToUser: `${root}/users/removeFav/`, // + id de l'utilisateur
+  updateRecipes: `${root}/recettes/patch/`, // + id de l'utilisateur
   
   // SUPPRESSION
   deleteRecipe: `${root}/recettes/delete`, // + img & id de la recette

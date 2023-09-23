@@ -23,8 +23,7 @@ const Footer = () => {
         <ul>
           <li>
             <p>Mentions Légales</p>
-            <Link>CGU</Link>
-            <Link>RGPD</Link>
+            <Link to={"/MentionsLegales"}>CGU</Link>
           </li>
           <li>
             <Link><img src="/Icons/Instagram.svg" alt="Lien Logo Instagram" /></Link>

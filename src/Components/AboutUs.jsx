@@ -1,7 +1,11 @@
 import React, { useRef, useState } from "react";
+import axios from "axios"
 import "../Utils/Sass/aboutus.scss";
+import { URL } from "../Utils/Urls";
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
   const [nom, setNom] = useState("")
   const [prenom, setPrenom] = useState("")
   const [message, setMessage] = useState("")
@@ -45,7 +49,10 @@ const AboutUs = () => {
 
   const send = () => {
     const email = {nom: nom, prenom: prenom, mail: mail, message: message}
-    console.log("ok !🦦");
+    axios.post(URL.sendMessage, email)
+    setTimeout(()=>{
+      navigate('/');
+    }, 1000)
   }
 
 

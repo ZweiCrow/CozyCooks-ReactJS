@@ -1,5 +1,5 @@
-// const root = "http://localhost:8080"
-const root = "https://christopher.startwin.fr"
+// export const root = "http://localhost:8080"
+export const root = "https://christopher.startwin.fr"
 
 export const URL = {
 

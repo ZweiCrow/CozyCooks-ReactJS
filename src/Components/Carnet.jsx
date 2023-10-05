@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios"
 import "../Utils/Sass/recette-carnet.scss"
-import { URL } from '../Utils/Urls';
+import { URL , root} from '../Utils/Urls';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
@@ -126,7 +126,7 @@ const Carnet = () => {
                   <p>{item.niveau}</p>
                   <p>{item.nom}</p>
                 </Link>
-                <img src={`https://christopher.startwin.fr/${item.display}`} alt={item.nom} />
+                <img src={`${root}${item.display}`} alt={item.nom} />
               </li>
             )}else{
               return(<></>)

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { URL } from "../Utils/Urls";
+import { URL, root } from "../Utils/Urls";
 import "../Utils/Sass/pagerecette.scss";
 import Cookies from "js-cookie";
 
@@ -166,7 +166,7 @@ const PageRecette = () => {
           </div>
           <img
             id="back"
-            src={`https://christopher.startwin.fr/${Recipe.display}`}
+            src={`${root}/${Recipe.display}`}
             alt=""
           />
         </div>

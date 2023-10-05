@@ -110,7 +110,7 @@ const Header = () => {
               <li><Link ref={NavHome} to={"/"} className={(window.location.pathname === "/") ? "activeNav" : ""}>Accueil</Link></li>
               <li><Link ref={NavRecette} to={"/Recettes"} className={(window.location.pathname.includes("Recettes")) ? "activeNav" : ""}>Recettes</Link></li>
               <li><Link ref={NavCarnet} to={"/Carnet"} className={(window.location.pathname.includes("Carnet")) ? "activeNav" : ""}>Carnet</Link></li>
-              <li><Link ref={NavAboutUs} to={"/AboutUs"} className={(window.location.pathname.includes("AboutUs")) ? "activeNav" : ""}>AboutUs</Link></li>
+              <li><Link ref={NavAboutUs} to={"/AboutUs"} className={(window.location.pathname.includes("AboutUs")) ? "activeNav" : ""}>Contact</Link></li>
             </ul>
             <div id='Pointer' ref={Pointer}></div>
           </div>
@@ -124,7 +124,7 @@ const Header = () => {
               <li><Link to={"/"} className={(window.location.pathname === "/") ? "activeNav" : ""}>Accueil</Link></li>
               <li><Link to={"/Recettes"} className={(window.location.pathname.includes("/Recettes")) ? "activeNav" : ""}>Recettes</Link></li>
               <li><Link to={"/Carnet"} className={(window.location.pathname.includes("/Carnet")) ? "activeNav" : ""}>Carnet</Link></li>
-              <li><Link to={"/AboutUs"} className={(window.location.pathname.includes("/AboutUs")) ? "activeNav" : ""}>AboutUs</Link></li>
+              <li><Link to={"/AboutUs"} className={(window.location.pathname.includes("/AboutUs")) ? "activeNav" : ""}>Contact</Link></li>
               <li><Link onClick={Deconnexion}>
                 <div className={(window.location.pathname.includes("Connexion"))||(window.location.pathname.includes("Inscription")) ? "activeNav" : ""}>
                   <img src="/Icons/User.svg" alt="Icone Connexion Utilisateur" />

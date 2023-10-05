@@ -10,7 +10,7 @@
 
 
 header  { width: 100%; height: fit-content; min-height: 200px; margin-bottom: 0px !important; position: relative;
-          #Header { width: 100%; height: 200px; background: #292F3699; position: absolute; @include centerRow; justify-content: space-between; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+          #Header { width: 100%; height: 200px; background: #99521F99; position: absolute; @include centerRow; justify-content: space-between; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
                     #logo { width: 30%; height: 100%; @include centerRow;
                             img { width: 270px; height: 170px; transition: .5s;
                                   &:hover { filter: drop-shadow(0 0 4px $Blanc); cursor: pointer;}

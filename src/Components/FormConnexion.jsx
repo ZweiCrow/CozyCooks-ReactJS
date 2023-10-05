@@ -29,7 +29,7 @@ const FormConnexion = () => {
 
   const VerifBDD = ()=> {
     axios.post(URL.verifyUser, {
-      email: mail,
+      email: mail.toLowerCase(),
       password: pass
     }).then(response => {
       const userToken = response.data.message
@@ -68,7 +68,7 @@ const FormConnexion = () => {
         <input type="email" className='entry' onChange={(e)=>{setMail(e.target.value)}} placeholder='Email'/>
         <p className='warning' id='warnMail'>Mauvais email</p>
         <input type="password" className='entry' onChange={(e)=>{setPass(e.target.value)}} placeholder='Mot de Passe'/>
-        <p className='warning' id='warnPass'>Mauvais mot de passe <br/>(1 minuscule, 1 majuscule, 1 chiffre et 1 charactère spécial)</p>
+        <p className='warning' id='warnPass'>Mot de passe incorrect<br/>(1 minuscule, 1 majuscule, 1 chiffre et 1 charactère spécial)</p>
         <button>Se Connecter</button>
         <p className='warning' id='warnVerif' style={{marginTop: "30px"}}>Erreur</p>
       </form>

@@ -1,19 +1,28 @@
 @import "./constantes.scss";
 
-#About h2  { font-family: KanitBold; font-size: 30px; color: $Bleu; margin-bottom: 30px; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));}
-#About p  { font-family: Quicksand; font-size: 18px; color: $BleuAlt; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));}
+#About h2  { font-family: KanitBold; font-size: 30px; color: $Bleu; margin-bottom: 30px; }
+#About p  { font-family: Quicksand; font-size: 18px; color: $BleuAlt; }
+#About span  { font-family: KanitMedium; font-size: 20px; color: $Orange; }
 #About * {transition: .5s;}
 
-.hide { display: none;}
-.show { display: block;}
+.hide { display: none !important; opacity: 0; }
+.show { display: block !important; opacity: 1;}
+.showM { display: flex !important; opacity: 1;}
 
-#About  { width: 80%; height: fit-content; min-height: 1000px; margin: auto; @include centerRow; 
+#confirmTag { width: 100%; height: 100vh; background: $BleuT; position: absolute; z-index: 100; top: 0; @include centerRow; transition: .5s;
+              #TagMessage { width: fit-content; height: fit-content; background: $Blanc; border-radius: 15px; border: 4px solid $Jaune; @include centerRow; padding: 20px;
+                            p {font-family: Quicksand; font-size: 18px; color: $Orange; font-weight: bold; }
+                          }
+            }
+
+
+#About  { width: 80%; height: fit-content; min-height: 800px; margin: auto; @include centerRow; 
           #ALeft  { width: 70%; height: 85%; @include centerCol; justify-content: flex-start; margin-top: 50px;
                     #aboutus    { width: 90%; height: fit-content; margin-bottom: 75px;}
                     #contactus  { width: 90%; height: fit-content;}
                     form  { width: 100%; height: 500px; margin-top: 55px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
                             .champContact { width: 40%; height: fit-content; display: flex; flex-direction: column;
-                                            p     { color: red; font-size: 12px;}
+                                            p     { color: $Orange; font-size: 12px; margin-top: 10px;}
                                             label { font-family: KanitMedium; font-size: 20px; color: $Bleu; text-indent: 15px; margin-bottom: 5px;}
                                             input { font-family: Quicksand; font-size: 17px; color: $Blanc; background: $BleuAlt; border-radius: 50px; border: none; padding: 10px 20px; filter: drop-shadow(0px 4px 4px rgba(0, 37, 64, 0.25));
                                                     &::placeholder  { color: $Blanc;}

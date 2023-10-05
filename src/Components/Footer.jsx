@@ -25,10 +25,10 @@ const Footer = () => {
             <p>Mentions Légales</p>
             <Link to={"/MentionsLegales"}>CGU</Link>
           </li>
-          <li>
+          {/* <li>
             <Link><img src="/Icons/Instagram.svg" alt="Lien Logo Instagram" /></Link>
             <Link><img src="/Icons/Facebook.svg" alt="Lien Logo Facebook" /></Link>
-          </li>
+          </li> */}
           <li>
             <p>Plan du site</p>
             <Link to={"/"}>Accueil</Link>

@@ -11,12 +11,12 @@ footer  { width: 100%; height: 305px; display: flex !important; flex-direction: 
                         ul  { width: 90%; height: 90%; @include centerRow; justify-content: space-around;
                               li  { width: 25%; height: 80%; @include centerCol;
                                     &:nth-child(1)  { justify-content: flex-start; align-items: flex-start;}
-                                    &:nth-child(2)  { height: 60%; @include centerRow; justify-content: space-around;
+                                    &:nth-child(3)  { height: 60%; @include centerRow; justify-content: space-around;
                                                       a { width: 60%; margin: 0; @include centerRow;
                                                           img { width: 35%;}
                                                         }
                                                     }
-                                    &:nth-child(3)  { justify-content: flex-start; align-items: flex-end;}
+                                    &:nth-child(2)  { justify-content: flex-start; align-items: flex-end;}
                                     p { font-family: KanitBold; font-size: 24px; color: $Blanc; margin-bottom: 25px;}
                                     a { font-family: Quicksand; font-size: 20px; color: $Blanc; margin-bottom: 10px;  transition: .5s;
                                         &:hover { filter: drop-shadow(0 0 4px $Blanc);}

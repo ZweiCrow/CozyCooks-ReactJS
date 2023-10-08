@@ -17,7 +17,7 @@ const FormRecetteModif = ({route}) => {
   const [Temps, setTemps] = useState("")
   const [Display, setDisplay] = useState("")
   const [Image, setImage] = useState({})
-  const [Ingredients, setIngredients] = useState([{quantité: 10, unité: "mg", nom: "de sucre"}])
+  const [Ingredients, setIngredients] = useState([{quantité: 0, unité: "mg", nom: ""}])
   const [Etapes, setEtapes] = useState([""])
   
   const [Recette, setRecette] = useState({})
@@ -31,6 +31,16 @@ const FormRecetteModif = ({route}) => {
       try {
         const { data } = await axios.get(URL.fetchRecipeById + location.state.id);
         setRecette(data);
+
+        setNom(data.nom)
+        setTemps(data.temps)
+        setCategorie(data.categorie)
+        setStyle(data.style)
+        setNiveau(data.niveau)
+        setIngredients(data.ingredients)
+        setEtapes(data.etapes)
+        setDisplay(data.display)
+
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -67,18 +77,7 @@ const FormRecetteModif = ({route}) => {
     // Delete the old one
   }
 
-  const Replace = () => {
-    setTimeout(()=>{
-      if (Nom === "") { setNom(Recette.nom) }
-      if (Niveau === "") { setNiveau(Recette.niveau) }
-      if (Style === "") { setStyle(Recette.style) }
-      if (Categorie === "") { setCategorie(Recette.categorie) }
-      if (Temps === "") { setTemps(Recette.temps) }
-    })
-  }
-
   const Send = (e)=> {
-    Replace()
     e.preventDefault()
     // HandleImage()
     const recette = {
@@ -95,17 +94,17 @@ const FormRecetteModif = ({route}) => {
 
     console.log(recette);
 
-    axios.patch(URL.updateRecipes,{
-      nom: Nom,
-      auteur: userId,
-      niveau: Niveau,
-      style: Style,
-      categorie: Categorie,
-      temps: Number(Temps),
-      display: Display,
-      ingredients: Ingredients,
-      etapes: Etapes,
-    })
+    // axios.patch(`${URL.updateRecipes}${location.state.id}`,{
+    //   nom: Nom,
+    //   auteur: userId,
+    //   niveau: Niveau,
+    //   style: Style,
+    //   categorie: Categorie,
+    //   temps: Number(Temps),
+    //   display: Display,
+    //   ingredients: Ingredients,
+    //   etapes: Etapes,
+    // })
     // setTimeout(()=>{
     //   navigate('/Carnet');
     // }, 1000)
@@ -130,15 +129,15 @@ const FormRecetteModif = ({route}) => {
     <form id='FormRecette' onSubmit={Send} encType="multipart/form-data">
       <div className='box'>
         <label htmlFor="nom">Nom de la recette</label>
-        <input type="text" id='nom' placeholder={Recette.nom} onChange={(e)=>{setNom(e.target.value)}} />
+        <input type="text" id='nom' value={Nom} onChange={(e)=>{setNom(e.target.value)}} />
       </div>
       <div className='box'>
         <label htmlFor="temps">Temps de préparation total</label>
-        <input type="number" id='temps' placeholder={Recette.temps} onChange={(e)=>{setTemps(e.target.value)}} />
+        <input type="number" id='temps' value={Temps} onChange={(e)=>{setTemps(e.target.value)}} />
       </div>
       <div className='box'>
         <label htmlFor="Categories">Categorie</label>
-        <select name="Categories" id="Categories" placeholder={Recette.categorie} onChange={(e)=>setCategorie(e.target.value)} >
+        <select name="Categories" id="Categories" value={Categorie} onChange={(e)=>setCategorie(e.target.value)} >
           <option value="">Categorie</option>
           <option value="Entree">Entree</option>
           <option value="Plat">Plat</option>
@@ -147,7 +146,7 @@ const FormRecetteModif = ({route}) => {
       </div>
       <div className='box'>
         <label htmlFor="Styles">Style</label>
-        <select name="Styles" id="Styles" placeholder={Recette.style} onChange={(e)=>setStyle(e.target.value)}>
+        <select name="Styles" id="Styles" value={Style} onChange={(e)=>setStyle(e.target.value)}>
           <option value="">Style</option>
           <option value="Asiatique">Asiatique</option>
           <option value="Indienne">Indienne</option>
@@ -158,7 +157,7 @@ const FormRecetteModif = ({route}) => {
       </div>
       <div className='box'>
         <label htmlFor="Niveaux">Niveau</label>
-        <select name="Niveaux" id="Niveaux" placeholder={Recette.niveau} onChange={(e)=>setNiveau(e.target.value)} >
+        <select name="Niveaux" id="Niveaux" value={Niveau} onChange={(e)=>setNiveau(e.target.value)} >
           <option value="">Niveau</option>
           <option value="Débutant">Débutant</option>
           <option value="Intermédiaire">Intermédiaire</option>
@@ -178,15 +177,15 @@ const FormRecetteModif = ({route}) => {
           const position = index1-1;
           return(
           <div className='entry' key={index1}>
-            <input type="number" id='quantité' value={item.quantité} name='quantité' placeholder='Quantité' onChange={(e)=>{item.quantité = e.target.value}} />
-            <select name="Unité" id="Unité" value={item.unité} onChange={(e)=>{item.unité = e.target.value}}>
+            <input type="number" id='quantité' name='quantité' onChange={(e)=>{item.quantité = e.target.value}} />
+            <select name="Unité" id="Unité" onChange={(e)=>{item.unité = e.target.value}}>
               <option value="" >Unité</option>
               <option value="g" >g</option>
               <option value="mg" >mg</option>
               <option value="ml" >ml</option>
               <option value="cl" >cl</option>
             </select>
-            <input type="text" id='ingredient' value={item.nom} name='ingredient' placeholder='ingredient' onChange={(e)=>{item.nom = e.target.value}}/>
+            <input type="text" id='ingredient' name='ingredient' onChange={(e)=>{item.nom = e.target.value}}/>
             <div className='minus' onClick={()=>{
                 Ingredients.splice(position,1);
                 setRefresh(!Refresh)
@@ -197,8 +196,8 @@ const FormRecetteModif = ({route}) => {
           )
         })}
         <div className='plus' onClick={()=>{
-          Ingredients.push({quantité: 10, unité: "", nom: ""});
-          setRefresh(!Refresh)
+          Ingredients.push({quantité: 0, unité: "", nom: ""});
+          setIngredients([...Ingredients])
         }}>
           <img src="./Icons/Plus.svg" alt="" />
         </div>
@@ -212,7 +211,7 @@ const FormRecetteModif = ({route}) => {
           const position = index2-1;
           return(
             <div className='step' key={index2}>
-              <textarea type="text" placeholder={`Etape ${index2}`} value={item} onChange={(e)=>{Etapes[position] = e.target.value}}/>
+              <textarea type="text" placeholder={`Etape ${index2}`} onChange={(e)=>{Etapes[position] = e.target.value}}/>
               <div className='minus' onClick={()=>{
                   Etapes.splice(position,1);
                   setRefresh(!Refresh)
@@ -225,7 +224,7 @@ const FormRecetteModif = ({route}) => {
 
         <div className='plus' onClick={()=>{
             Etapes.push("");
-            setRefresh(!Refresh)
+            setEtapes([...Etapes]);
           }}>
           <img src="./Icons/Plus.svg" alt="" />
         </div>

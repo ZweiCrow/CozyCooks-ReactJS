@@ -101,7 +101,7 @@ const Header = () => {
             <Link onClick={Deconnexion}>
               <div className={(window.location.pathname.includes("User")) ? "activeButton" : ""}>
                 <img src="/Icons/User.svg" alt="Icone Connexion Utilisateur" />
-                <p>{(user)? "Déconnexion" : "Connexion"}</p>
+                <p>{(user)? "Déconnexion" : ""}</p>
               </div>
             </Link>
           </div>

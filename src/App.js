@@ -12,6 +12,7 @@ import Carnet from "./Components/Carnet";
 import FormRecette from "./Components/FormRecette";
 import MentionsLegales from "./Components/MentionsLegales";
 import FormRecetteModif from "./Components/FormRecetteModif";
+import ToCarnet from "./Components/ToCarnet";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Recettes" Component={Recettes}/>
         <Route path="/PageRecette" Component={PageRecette}/>
         <Route path="/Carnet" Component={Carnet}/>
+        <Route path="/ToCarnet" Component={ToCarnet}/>
         <Route path="/Formulaire" Component={FormRecette}/>
         <Route path="/FormulaireM" Component={FormRecetteModif}/>
         <Route path="/AboutUs" Component={AboutUs}/>

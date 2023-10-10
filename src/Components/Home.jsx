@@ -71,7 +71,7 @@ const Home = () => {
                 ingrédients, les étapes, etc ... Vous pourrez retrouver toutes
                 ces fiches dans un carnet bien rangé.
               </p>
-              <Link to={"/Carnet"}>
+              <Link to={"/ToCarnet"}>
                 <p>Parcourir</p>
                 <img src="/Icons/Fleche.svg" alt="Fleche" />
               </Link>

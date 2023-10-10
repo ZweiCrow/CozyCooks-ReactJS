@@ -8,12 +8,23 @@
                     }
               }
 
-#IntroCarnet  { width: 100%; height: 600px; @include centerRow; justify-content: space-around; margin: 50px 0;
+#IntroCarnet  { width: 100%; height: fit-content; min-height: 600px; @include centerRow; justify-content: space-around; margin: 50px 0;
                 #ToCarnetL  { height: 100%; width: 30%; overflow: hidden; border-radius: 15px;
                               img { width: 100%; height: 100%;}
                             }
                 #ToCarnetR  { height: 80%; width: 50%;
                               p { width: 80%; margin: 20px 0;}
-                              div { width: 40%; height: fit-content; @include centerRow; margin-top: 50px;}
+                              div { width: 100%; height: fit-content; @include centerRow; justify-content: flex-start; margin-top: 50px;}
                             }
               }
+
+@media screen and (max-width: 1000px) {
+  #IntroCarnet  { flex-direction: column !important;
+                  #ToCarnetL  { width: 90% !important; height: 25vh; 
+                                img { height: auto; margin-top: -90%;}
+                              }
+                  #ToCarnetR  { width: 80%; margin-top: 20px;
+                                p { width: 100% !important;}
+                              }
+                }
+}

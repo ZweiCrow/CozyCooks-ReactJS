@@ -30,7 +30,7 @@ const Header = () => {
       Pointer.current.style.opacity = "1" 
       Pointer.current.style.transform = `translateX(${NavRecette.current.offsetLeft+(NavRecette.current.offsetWidth/4)}px)`
     }
-    if(window.location.pathname.includes("/Carnet") || window.location.pathname.includes("/Formulaire")){
+    if(window.location.pathname.includes("/Carnet") || window.location.pathname.includes("/Formulaire") || (window.location.pathname.includes("ToCarnet"))) {
       Pointer.current.style.opacity = "1" 
       Pointer.current.style.transform = `translateX(${NavCarnet.current.offsetLeft+(NavCarnet.current.offsetWidth/4)}px)`
     }
@@ -109,7 +109,7 @@ const Header = () => {
             <ul>
               <li><Link ref={NavHome} to={"/"} className={(window.location.pathname === "/") ? "activeNav" : ""}>Accueil</Link></li>
               <li><Link ref={NavRecette} to={"/Recettes"} className={(window.location.pathname.includes("Recettes")) ? "activeNav" : ""}>Recettes</Link></li>
-              <li><Link ref={NavCarnet} to={"/Carnet"} className={(window.location.pathname.includes("Carnet")) ? "activeNav" : ""}>Carnet</Link></li>
+              <li><Link ref={NavCarnet} to={"/ToCarnet"} className={(window.location.pathname.includes("Carnet")) || (window.location.pathname.includes("ToCarnet")) ? "activeNav" : ""}>Carnet</Link></li>
               <li><Link ref={NavAboutUs} to={"/AboutUs"} className={(window.location.pathname.includes("AboutUs")) ? "activeNav" : ""}>Contact</Link></li>
             </ul>
             <div id='Pointer' ref={Pointer}></div>
@@ -123,7 +123,7 @@ const Header = () => {
             <ul>
               <li><Link to={"/"} className={(window.location.pathname === "/") ? "activeNav" : ""}>Accueil</Link></li>
               <li><Link to={"/Recettes"} className={(window.location.pathname.includes("/Recettes")) ? "activeNav" : ""}>Recettes</Link></li>
-              <li><Link to={"/Carnet"} className={(window.location.pathname.includes("/Carnet")) ? "activeNav" : ""}>Carnet</Link></li>
+              <li><Link to={"/ToCarnet"} className={(window.location.pathname.includes("/Carnet")) ? "activeNav" : ""}>Carnet</Link></li>
               <li><Link to={"/AboutUs"} className={(window.location.pathname.includes("/AboutUs")) ? "activeNav" : ""}>Contact</Link></li>
               <li><Link onClick={Deconnexion}>
                 <div className={(window.location.pathname.includes("Connexion"))||(window.location.pathname.includes("Inscription")) ? "activeNav" : ""}>

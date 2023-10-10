@@ -98,9 +98,9 @@ const Header = () => {
         </div>
         <div id='HeaderRight'>
           <div id='NavUp' className='Nav'>
-            <Link onClick={Deconnexion}>
+            <Link className={(user)? "" : "NoUser"} onClick={Deconnexion}>
               <div className={(window.location.pathname.includes("User")) ? "activeButton" : ""}>
-                <img src="/Icons/User.svg" alt="Icone Connexion Utilisateur" />
+                <img src={(user)? "/Icons/User.svg" : "/Icons/UserW.svg" } alt="Icone Connexion Utilisateur" />
                 <p>{(user)? "Déconnexion" : ""}</p>
               </div>
             </Link>

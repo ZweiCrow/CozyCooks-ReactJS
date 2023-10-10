@@ -76,7 +76,7 @@ const Carnet = () => {
     <h1 style={{ display: "none" }}>Carnet</h1>
       <div id='Hello'>
         <p id='hi'>Bonjour, {User.nom}
-        {/* <br/><br/> Vous avez enregistré {User.favorites.length} recettes parmis vos favoris. */}
+        <br /> 
         </p>
         <Link to={"/Formulaire"}>Voulez vous enregistrer une nouvelle recette ?</Link>
       </div>  

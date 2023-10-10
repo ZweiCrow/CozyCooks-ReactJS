@@ -117,7 +117,7 @@ const Header = () => {
         </div>
         <div id='HeaderMobile'>
           <div id='BoutonMobile' ref={BoutonMobile} onClick={()=>{setMobile(!mobile)}} >
-            <img src="/Icons/User.svg" alt="Bouton Mobile" />
+            <img src="/Icons/UserW.svg" alt="Bouton Mobile" />
           </div>
           <div id='MenuMobile'>
             <ul>

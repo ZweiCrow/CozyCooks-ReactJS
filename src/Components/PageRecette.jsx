@@ -206,7 +206,7 @@ const PageRecette = () => {
           <p>
             Temps de préparation :{" "}
             {Recipe.temps > 60
-              ? `${Recipe.temps / 60} heure(s)`
+              ? `${Math.floor(Recipe.temps / 60) } heure(s) ${Recipe.temps % 60 } min(s)`
               : `${Recipe.temps} mins`}
           </p>
           <p>{Recipe.style === "" ? "" : `Style : ${Recipe.style}`}</p>

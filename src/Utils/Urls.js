@@ -1,5 +1,5 @@
 // export const root = "http://localhost:8080"
-export const root = "https://christopher.startwin.fr"
+export const root = "https://cozycooks-api.onrender.com"
 
 export const URL = {
 
